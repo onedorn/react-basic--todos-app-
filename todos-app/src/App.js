@@ -1,5 +1,6 @@
 import React from 'react';
 import Todos from './Todos'
+import AddForm from './addForm'
 
 class App extends React.Component {
     constructor() {
@@ -14,9 +15,17 @@ class App extends React.Component {
     deleteTodo = (id) => {
         const todos = this.state.todos.filter(todo => {
             return todo.id !==id;
-        })
+        });
         this.setState({
             todos
+        })
+    }
+
+    addTodo = (todo) => {
+        todo.id = Math.random();
+        let todos = [...this.state.todos, todo]
+        this.setState({
+            todos: todos
         })
     }
     render() {
@@ -24,6 +33,7 @@ class App extends React.Component {
             <div className="todo-app container">
                 <h1 className="center blue-text">Todos</h1>
                 <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
+                <AddForm addTodo={this.addTodo}/>
             </div>
         );
     }
