@@ -1,2 +1,4 @@
-**Press this link to check out application [Firebase Hosting].
-Would be more then happy for any advices and recomendation regarding me code**(https://react-redux-firestore-app.firebaseapp.com/signin)
+# This is basic React based app, with some basic functionality: 
+
+> dynamically adding content (todos) to he DOM, 
+> also deleting them from.
